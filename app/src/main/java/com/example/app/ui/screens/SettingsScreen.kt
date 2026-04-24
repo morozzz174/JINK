@@ -1,7 +1,6 @@
 package com.example.app.ui.screens
 
 import android.app.Activity
-import android.content.Context
 import android.widget.FrameLayout
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

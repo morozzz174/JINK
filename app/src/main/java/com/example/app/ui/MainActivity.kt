@@ -1,9 +1,6 @@
 package com.example.app.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -87,6 +84,14 @@ class MainActivity : ComponentActivity() {
                         if (showInterstitial) {
                             interstitialAd.load()
                             showInterstitial = false
+                        }
+                    }
+
+                    LaunchedEffect(authState) {
+                        if (authState is AuthState.Idle) {
+                            navController.navigate("auth") {
+                                popUpTo(0) { inclusive = true }
+                            }
                         }
                     }
 
