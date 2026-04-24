@@ -19,6 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -58,6 +59,7 @@ import com.example.app.viewmodel.PasswordViewModel
 fun MainScreen(
     viewModel: PasswordViewModel,
     onNavigateToSettings: () -> Unit,
+    onNavigateToLegal: (String) -> Unit,
     showInterstitialAd: () -> Unit
 ) {
     val context = LocalContext.current
@@ -231,6 +233,15 @@ fun MainScreen(
                         style = MaterialTheme.typography.titleMedium
                     )
                     Spacer(modifier = Modifier.height(8.dp))
+                }
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                TextButton(
+                    onClick = { onNavigateToLegal("privacy") },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(stringResource(R.string.legal_privacy_link))
                 }
             }
 

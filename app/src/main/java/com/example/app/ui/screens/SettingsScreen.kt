@@ -28,6 +28,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -45,6 +46,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.example.app.BuildConfig
 import com.example.app.R
 import com.example.app.ads.YandexBannerAd
+import com.example.app.auth.AuthManager
+import com.example.app.auth.AuthState
 import com.example.app.data.model.ThemeMode
 import com.example.app.viewmodel.PasswordViewModel
 
@@ -52,13 +55,16 @@ import com.example.app.viewmodel.PasswordViewModel
 @Composable
 fun SettingsScreen(
     viewModel: PasswordViewModel,
+    authManager: AuthManager,
     onNavigateBack: () -> Unit,
+    onNavigateToLegal: (String) -> Unit,
     showInterstitialAd: () -> Unit
 ) {
     val context = LocalContext.current
     val activity = context as Activity
     val appSettings by viewModel.appSettings.collectAsState()
     val toastMessage by viewModel.toastMessage.collectAsState()
+    val authState by authManager.authState.collectAsState()
 
     val snackbarHostState = remember { SnackbarHostState() }
     val premiumSuccessMessage = stringResource(R.string.premium_success)
@@ -231,6 +237,78 @@ fun SettingsScreen(
                         text = stringResource(R.string.about_description),
                         style = MaterialTheme.typography.bodyMedium
                     )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant
+                )
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Text(
+                        text = stringResource(R.string.settings_legal),
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    TextButton(
+                        onClick = { onNavigateToLegal("privacy") },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(
+                            text = stringResource(R.string.legal_privacy_link),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+
+                    TextButton(
+                        onClick = { onNavigateToLegal("offer") },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(
+                            text = stringResource(R.string.legal_offer_link),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            if (authState is AuthState.Authenticated) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.errorContainer
+                    )
+                ) {
+                    Column(
+                        modifier = Modifier.padding(16.dp)
+                    ) {
+                        val userData = (authState as AuthState.Authenticated).user
+                        val userInfo = userData.email.ifEmpty { userData.phone }
+                        Text(
+                            text = stringResource(R.string.settings_account, userInfo),
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+
+                        OutlinedButton(
+                            onClick = {
+                                authManager.signOut()
+                                onNavigateBack()
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(stringResource(R.string.auth_logout))
+                        }
+                    }
                 }
             }
 

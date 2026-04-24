@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -74,6 +75,9 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.6")
 
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     implementation("com.yandex.android:mobileads:7.1.0")
     implementation("com.android.billingclient:billing:6.2.0")

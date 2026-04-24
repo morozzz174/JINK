@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.app.auth.AuthManager
 import com.example.app.billing.BillingManager
 import com.example.app.data.model.AppSettings
 import com.example.app.data.model.PasswordOptions
@@ -20,7 +21,8 @@ import kotlinx.coroutines.launch
 
 class PasswordViewModel(
     private val repository: PasswordRepository,
-    private val billingManager: BillingManager
+    private val billingManager: BillingManager,
+    private val authManager: AuthManager
 ) : ViewModel() {
 
     val passwordOptions: StateFlow<PasswordOptions> = repository.passwordOptions
@@ -123,11 +125,12 @@ class PasswordViewModel(
 
     class Factory(
         private val repository: PasswordRepository,
-        private val billingManager: BillingManager
+        private val billingManager: BillingManager,
+        private val authManager: AuthManager
     ) : ViewModelProvider.Factory {
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return PasswordViewModel(repository, billingManager) as T
+            return PasswordViewModel(repository, billingManager, authManager) as T
         }
     }
 }

@@ -54,4 +54,48 @@
 
     <string name="error_generic">Произошла ошибка</string>
     <string name="error_no_options">Выберите хотя бы один тип символов</string>
+
+    <string name="auth_title">Вход</string>
+    <string name="auth_subtitle">Войдите, чтобы сохранять пароли и получить Премиум</string>
+    <string name="auth_tab_email">Почта</string>
+    <string name="auth_tab_phone">Телефон</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Пароль</string>
+    <string name="auth_confirm_password">Подтвердите пароль</string>
+    <string name="auth_phone">Номер телефона</string>
+    <string name="auth_send_code">Отправить код</string>
+    <string name="auth_verification_code">Код подтверждения</string>
+    <string name="auth_verify">Подтвердить</string>
+    <string name="auth_resend_code">Отправить код повторно</string>
+    <string name="auth_login">Войти</string>
+    <string name="auth_register">Зарегистрироваться</string>
+    <string name="auth_has_account">Уже есть аккаунт? Войти</string>
+    <string name="auth_no_account">Нет аккаунта? Зарегистрироваться</string>
+    <string name="auth_logout">Выйти</string>
+
+    <string name="consent_title">Согласие на обработку данных</string>
+    <string name="consent_intro_title">Добро пожаловать!</string>
+    <string name="consent_intro_text">Для продолжения работы с приложением необходимо ваше согласие на обработку персональных данных.</string>
+    <string name="consent_personal_data_title">Согласие на обработку персональных данных</string>
+    <string name="consent_personal_data_desc">Я даю согласие на обработку моих персональных данных (email, номер телефона) для работы в приложении.</string>
+    <string name="consent_terms_title">Согласие с офертой</string>
+    <string name="consent_view_offer">Просмотреть оферту</string>
+    <string name="consent_marketing_title">Согласие на маркетинговые рассылки</string>
+    <string name="consent_marketing_desc">Я согласен получать информацию о новых функциях и акциях (необязательно).</string>
+    <string name="consent_accept">Принять</string>
+    <string name="consent_decline">Отклонить и выйти</string>
+
+    <string name="premium_subscription_title">Подписка Премиум</string>
+    <string name="premium_subscription_desc">Безлимитное использование без рекламы</string>
+    <string name="premium_monthly">1 месяц</string>
+    <string name="premium_yearly">12 месяцев</string>
+    <string name="premium_yearly_savings">Экономия 40%</string>
+
+    <string name="settings_legal">Правовая информация</string>
+    <string name="legal_privacy_title">Политика конфиденциальности</string>
+    <string name="legal_privacy_link">Политика конфиденциальности</string>
+    <string name="legal_offer_title">Публичная оферта</string>
+    <string name="legal_offer_link">Публичная оферта</string>
+    <string name="legal_default_title">Документ</string>
+    <string name="settings_account">Аккаунт: %s</string>
 </resources>
