@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Генератор паролей</string>
+
+    <string name="main_title">Генератор паролей</string>
+    <string name="generate_button">Создать пароль</string>
+    <string name="copy_button">Копировать</string>
+    <string name="save_button">Сохранить</string>
+    <string name="copied_toast">Пароль скопирован</string>
+    <string name="saved_toast">Пароль сохранён</string>
+
+    <string name="password_label">Пароль:</string>
+    <string name="password_length">Длина пароля</string>
+    <string name="password_length_value">%d символов</string>
+
+    <string name="options_title">Настройки пароля</string>
+    <string name="include_uppercase">Заглавные буквы (A-Z)</string>
+    <string name="include_lowercase">Строчные буквы (a-z)</string>
+    <string name="include_numbers">Цифры (0-9)</string>
+    <string name="include_symbols">Спецсимволы (!@#$)</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_theme">Тема приложения</string>
+    <string name="theme_system">Системная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_premium">Премиум</string>
+    <string name="settings_buy_premium">Купить Премиум</string>
+    <string name="settings_premium_purchased">Премиум активен</string>
+    <string name="settings_restore_premium">Восстановить покупки</string>
+
+    <string name="saved_passwords_title">Сохранённые пароли</string>
+    <string name="saved_passwords_empty">Нет сохранённых паролей</string>
+    <string name="delete_password">Удалить</string>
+    <string name="copy_password">Копировать</string>
+
+    <string name="about_version">Версия %s</string>
+    <string name="about_description">Безопасный генератор паролей с возможностью сохранения и офлайн-работой.</string>
+    <string name="about_privacy">Политика конфиденциальности</string>
+    <string name="about_privacy_link">Политика конфиденциальности</string>
+
+    <string name="premium_title">Премиум</string>
+    <string name="premium_description">Отключить рекламу и получить дополнительные функции</string>
+    <string name="premium_price">99 ₽</string>
+    <string name="premium_success">Премиум активирован!</string>
+    <string name="premium_error">Ошибка покупки. Попробуйте позже.</string>
+    <string name="premium_restore_success">Покупки восстановлены</string>
+    <string name="premium_restore_error">Нет покупок для восстановления</string>
+
+    <string name="ad_loading">Загрузка рекламы…</string>
+    <string name="ad_error">Реклама недоступна</string>
+    <string name="ad_banner_title">Реклама</string>
+
+    <string name="error_generic">Произошла ошибка</string>
+    <string name="error_no_options">Выберите хотя бы один тип символов</string>
+</resources>
